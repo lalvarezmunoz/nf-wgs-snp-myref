@@ -15,14 +15,14 @@ process freebayes {
     
     input:
         tuple val(prefix), path(bamfile), path(bamindex)
-        path(reference)
+        path(genome_fna)
 
     output:
         tuple val(prefix), path("${prefix}_freebayes.vcf"), emit: vcf
 
     script:
     """
-    freebayes -C 2 -F 0.2 --min-coverage 8 -q 15 -p 1 -f ${reference} ${bamfile} > ${prefix}_freebayes.vcf
+    freebayes -C 2 -F 0.2 --min-coverage 8 -q 15 -p 1 -f ${genome_fna} ${bamfile} > ${prefix}_freebayes.vcf
     """
     /* freebayes parameters used:
 

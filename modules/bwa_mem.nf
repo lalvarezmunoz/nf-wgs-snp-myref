@@ -2,10 +2,10 @@
 https://bio-bwa.sourceforge.net/
 
 input:
-    val: genome assembly accession number (GCA or GCF)
-    path: assembly .fna file
+    val: reference genome id
+    path: reference .fna file
 output:
-    tuple: assembly accession number, bwa index files (.amb, .ann, .bwt, .pac, .sa) 
+    path: bwa index files (.amb, .ann, .bwt, .pac, .sa) 
 */
 
 process bwa_index {

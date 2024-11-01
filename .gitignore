@@ -4,7 +4,7 @@
 work/*
 results/*
 test/*
-references/*
+genome/*
 
 # editor configs
 .vscode/
